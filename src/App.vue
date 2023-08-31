@@ -1,16 +1,16 @@
 <template>
   <div class="App">
-    <SessionButton platform="google"    @onSessionReceived="handleSessionReceived" @onErrorReceived="handleErrorReceived" />
-    <SessionButton platform="github" @onSessionReceived="handleSessionReceived" @onErrorReceived="handleErrorReceived" />
+    <LoginBrokerButton platform="google" tenantName="loginbroker" @onSessionReceived="handleSessionReceived" @onErrorReceived="handleErrorReceived" />
+    <LoginBrokerButton platform="github" tenantName="loginbroker" @onSessionReceived="handleSessionReceived" @onErrorReceived="handleErrorReceived" />
   </div>
 </template>
 <script lang="ts">
-import { SessionButton } from 'vue-login-broker-library';
+import { LoginBrokerButton } from 'vue-login-broker-library';
 import 'vue-login-broker-library/dist/style.css';
 
 export default {
   components: {
-    SessionButton,
+    LoginBrokerButton,
   },
   methods: {
     handleSessionReceived(sessionId: any) {
